@@ -6,11 +6,18 @@
   <h1>Wishlistinator!</h1>
   {{> loginButtons}}
   <br>
-  {{> hello}}
+  {{> newWish}}
+  <br>
+  {{> wishes}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>{{currentUser.username}} pressed the button {{counter}} times.</p>
-</template>
+<template name="wishes">
+  {{#each wishes}}
+  {{> wish}}
+  {{/each}}
+</Template>
 
+<template name="wish">
+  <h3>{{name}}</h3>
+  <p>{{desc}}</p>
+</template>
