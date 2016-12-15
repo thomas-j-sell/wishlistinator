@@ -11,7 +11,6 @@ WishSchema = new SimpleSchema({
   },
   author: {
     type: String,
-    // label: "Author",
     autoValue: function () {
       return this.userId
     },
