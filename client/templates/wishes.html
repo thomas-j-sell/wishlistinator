@@ -1,5 +1,11 @@
 <template name="wishes">
+  <h2>My Wishlist</h2>
+  {{#if $.Session.get 'newWish'}}
+    {{> newWish}}
+  {{else}}
+    <button class="new-wish btn btn-default">New Wish</button>
+  {{/if}}
   {{#each wishes}}
-  {{> wish}}
+    {{> wish}}
   {{/each}}
 </Template>

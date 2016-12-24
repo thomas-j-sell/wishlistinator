@@ -26,3 +26,8 @@ accounts-password
 meteortoys:allthings
 aldeed:collection2
 aldeed:autoform
+twbs:bootstrap
+fortawesome:fontawesome
+kadira:flow-router
+kadira:blaze-layout
+raix:handlebar-helpers

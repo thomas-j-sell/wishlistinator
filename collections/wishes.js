@@ -29,4 +29,10 @@ WishSchema = new SimpleSchema({
   }
 });
 
+Meteor.methods({
+  deleteWish: function(id) {
+    Wishes.remove(id);
+  }
+});
+
 Wishes.attachSchema( WishSchema );
