@@ -15,6 +15,11 @@
       "emails": [{"address": "groot@i.am", "verivied":  true}],
       "username": "Groot",
       "password": "iamgroot"
+    },
+    {
+      "emails": [{"address": "tom@email.com", "verivied":  true}],
+      "username": "Tom",
+      "password": "password"
     }
   ]
 }
