@@ -1,0 +1,50 @@
+{
+  "wishes":
+  [
+    {
+      "name": "Industrial Grade Tablet",
+      "desc": "For hacking and stuff",
+      "author": "Felicity"
+    },
+    {
+      "name": "PS4 Overwatch",
+      "desc": "Hehe",
+      "author": "Felicity"
+    },
+    {
+      "name": "New Shoes",
+      "desc": "Let's get some shoes",
+      "author": "Felicity"
+    },
+    {
+      "name": "My own supersuit",
+      "desc": "For um… cosplay",
+      "author": "Felicity"
+    },
+    {
+      "name": "Brain food",
+      "desc": "haha",
+      "author": "Olivia"
+    },
+    {
+      "name": "All the hot sauce",
+      "desc": "\"some like it hot\"",
+      "author": "Olivia"
+    },
+    {
+      "name": "Tainted Utopia",
+      "desc": "For research purposes",
+      "author": "Olivia"
+    },
+    {
+      "name": "I am Groot",
+      "desc": "I am Groot.  I am Groot",
+      "author": "Groot"
+    },
+    {
+      "name": "I am Groot",
+      "desc": "I am Groot, I am Groot.  I am Groot",
+      "author": "Groot"
+    }
+  ]
+}

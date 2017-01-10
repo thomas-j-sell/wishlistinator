@@ -1,0 +1,20 @@
+{
+  "users":
+  [
+    {
+      "emails": [{"address": "smoakf@palmertech.com", "verivied":  true}],
+      "username": "Felicity",
+      "password": "ollieishot"
+    },
+    {
+      "emails": [{"address": "moorel@spd.gov", "verivied":  true}],
+      "username": "Olivia",
+      "password": "brains"
+    },
+    {
+      "emails": [{"address": "groot@i.am", "verivied":  true}],
+      "username": "Groot",
+      "password": "iamgroot"
+    }
+  ]
+}

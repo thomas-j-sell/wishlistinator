@@ -12,7 +12,11 @@ WishSchema = new SimpleSchema({
   author: {
     type: String,
     autoValue: function () {
-      return this.userId
+      // only sets autovalue if one isn't provided
+      // allows manual insertion of records
+      if (!this.isSet) {
+        return this.userId
+      }
     },
     autoform: {
       type: "hidden"
