@@ -9,5 +9,5 @@ Meteor.publish("userList", function() {
 });
 
 Meteor.publish("wishes", function wishesPublication() {
-  return Wishes.find({author: this.userId});
+  return Wishes.find({});
 });

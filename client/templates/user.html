@@ -1,5 +1,10 @@
 <template name="user">
-  <div class="well">
-  {{username}}
-  </div>
+  {{#with user params.userId}}
+  <h1>
+    {{username}}
+  </h1>
+  {{/with}}
+  {{#each wishes params.userId}}
+    {{> wish}}
+  {{/each}}
 </template>

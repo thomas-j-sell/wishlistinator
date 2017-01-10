@@ -2,7 +2,9 @@
   <h2>Users</h2>
   {{#each users}}
   <div>
-  {{> user}}
+    <div class="well">
+      <a href="/user/{{_id}}">{{username}}</a>
+    </div>
   </div>
   {{/each}}
 </template>

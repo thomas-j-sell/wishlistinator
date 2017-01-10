@@ -1,21 +1,18 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
-// import { ReactiveVar } from 'meteor/reactive-var';
-
-// import './main.html';
 
 Meteor.subscribe("userList");
 Meteor.subscribe("wishes");
 
 Template.wishes.helpers({
-  wishes() {
-    return Wishes.find({});
+  wishes(userId) {
+    return Wishes.find({author: Meteor.userId()});
   }
 });
 
 Template.users.helpers({
+  // returns list of users excluding current user
   users() {
-    console.log(Meteor.users.find());
-    return Meteor.users.find();
+    return Meteor.users.find({_id: { $ne: Meteor.userId() }});
   }
 });
