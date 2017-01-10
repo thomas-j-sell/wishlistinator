@@ -3,3 +3,9 @@ Template.wish.events({
     Meteor.call('deleteWish', this._id);
   }
 });
+
+Template.wish.helpers({
+  ownsWish() {
+    return Meteor.userId() === this.author;
+  }
+})

@@ -1,6 +1,8 @@
 <template name="wish">
   <div class="well">
+    {{#if ownsWish}}
     <i class="fa fa-trash pull-right"></i>
+    {{/if}}
     <h3>{{name}}</h3>
     <p>{{desc}}</p>
   </div>
