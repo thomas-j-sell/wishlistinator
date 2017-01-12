@@ -16,10 +16,18 @@ Meteor.startup(() => {
     console.log("users loaded");
 
     JSON.parse(Assets.getText("wishes.json")).wishes.forEach(function (doc) {
+      var claimant;
+      if(doc.claimant) {
+        claimant = Meteor.users.findOne({username: doc.claimant})._id;
+      } else {
+        claimant = "";
+      }
       Wishes.insert({
         "name": doc.name,
         "desc": doc.desc,
-        "author": Meteor.users.findOne({username: doc.author})._id
+        "author": Meteor.users.findOne({username: doc.author})._id,
+        "claimed": doc.claimed,
+        "claimant": claimant
       });
     });
     console.log("wishes loaded");

@@ -4,62 +4,86 @@
     {
       "name": "Industrial Grade Tablet",
       "desc": "For hacking and stuff.  Must be bulletproof.",
-      "author": "Felicity"
+      "author": "Felicity",
+      "claimed": true,
+      "claimant": "Tom"
     },
     {
       "name": "PS4 Overwatch",
       "desc": "Hehe",
-      "author": "Felicity"
+      "author": "Felicity",
+      "claimed": false,
+      "claimant": ""
     },
     {
       "name": "New Shoes",
       "desc": "Let's get some shoes",
-      "author": "Felicity"
+      "author": "Felicity",
+      "claimed": true,
+      "claimant": "Olivia"
     },
     {
       "name": "My own supersuit",
       "desc": "For um… cosplay",
-      "author": "Felicity"
+      "author": "Felicity",
+      "claimed": true,
+      "claimant": "Groot"
     },
     {
       "name": "Brain food",
       "desc": "haha",
-      "author": "Olivia"
+      "author": "Olivia",
+      "claimed": false,
+      "claimant": ""
     },
     {
       "name": "All the hot sauce",
       "desc": "\"some like it hot\"",
-      "author": "Olivia"
+      "author": "Olivia",
+      "claimed": false,
+      "claimant": ""
     },
     {
       "name": "Tainted Utopia",
       "desc": "For research purposes",
-      "author": "Olivia"
+      "author": "Olivia",
+      "claimed": false,
+      "claimant": ""
     },
     {
       "name": "I am Groot",
       "desc": "I am Groot.  I am Groot",
-      "author": "Groot"
+      "author": "Groot",
+      "claimed": false,
+      "claimant": ""
     },
     {
       "name": "I am Groot",
       "desc": "I am Groot, I am Groot.  I am Groot",
-      "author": "Groot"
+      "author": "Groot",
+      "claimed": false,
+      "claimant": ""
     },
     {
       "name": "Grifters",
       "desc": "New Distopian Universe game.  Handbuilding crimebosses = fun!",
-      "author": "Tom"
+      "author": "Tom",
+      "claimed": false,
+      "claimant": ""
     },
     {
       "name": "Paddleboard",
       "desc": "Stand up paddleboard with paddle",
-      "author": "Tom"
+      "author": "Tom",
+      "claimed": false,
+      "claimant": ""
     },
     {
       "name": "Thule paddleboard carrier",
       "desc": "To transport paddleboard and paddle",
-      "author": "Tom"
+      "author": "Tom",
+      "claimed": false,
+      "claimant": ""
     }
   ]
 }

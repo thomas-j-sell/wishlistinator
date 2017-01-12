@@ -14,7 +14,7 @@ WishSchema = new SimpleSchema({
     autoValue: function () {
       // only sets autovalue if one isn't provided
       // allows manual insertion of records
-      if (!this.isSet) {
+      if (!this.isSet && this.isInsert) {
         return this.userId
       }
     },
@@ -25,8 +25,17 @@ WishSchema = new SimpleSchema({
   claimed: {
     type: Boolean,
     autoValue: function() {
-      return false
+      if(!this.isSet) {
+        return false
+      }
     },
+    autoform: {
+      type: "hidden"
+    }
+  },
+  claimant: {
+    type: String,
+    optional: true,
     autoform: {
       type: "hidden"
     }

@@ -1,7 +1,27 @@
-<template name="wish">
+<!-- contains several templates for wishes of various states -->
+
+<template name="ownedWish">
   <div class="well">
-    {{#if ownsWish}}
     <i class="fa fa-trash pull-right"></i>
+    <h3>{{name}}</h3>
+    <p>{{desc}}</p>
+  </div>
+</template>
+
+<template name="unclaimedWish">
+  <div class="well">
+    <i class="fa fa-flag pull-right"></i>
+    <h3>{{name}}</h3>
+    <p>{{desc}}</p>
+  </div>
+</template>
+
+<template name="claimedWish">
+  <div class="well bg-info">
+    {{#if ownedByUser this.claimant}}
+    <i class="fa fa-star pull-right"></i>
+    {{else}}
+    <span class="pull-right">{{getUserName this.claimant}}</span>
     {{/if}}
     <h3>{{name}}</h3>
     <p>{{desc}}</p>

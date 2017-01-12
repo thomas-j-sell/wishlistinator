@@ -6,6 +6,8 @@
     <button class="new-wish btn btn-default">New Wish</button>
   {{/if}}
   {{#each wishes}}
-    {{> wish}}
+  <!-- {{#if ownsWish}} -->
+    {{> ownedWish}}
+  <!-- {{/if}} -->
   {{/each}}
 </Template>

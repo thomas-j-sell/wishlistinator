@@ -5,6 +5,10 @@
   </h1>
   {{/with}}
   {{#each wishes params.userId}}
-    {{> wish}}
+    {{#if claimed}}
+      {{> claimedWish}}
+    {{else}}
+      {{> unclaimedWish}}
+    {{/if}}
   {{/each}}
 </template>
