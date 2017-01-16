@@ -54,15 +54,15 @@
       "name": "I am Groot",
       "desc": "I am Groot.  I am Groot",
       "author": "Groot",
-      "claimed": false,
-      "claimant": ""
+      "claimed": true,
+      "claimant": "Tom"
     },
     {
       "name": "I am Groot",
       "desc": "I am Groot, I am Groot.  I am Groot",
       "author": "Groot",
-      "claimed": false,
-      "claimant": ""
+      "claimed": true,
+      "claimant": "Olivia"
     },
     {
       "name": "Grifters",

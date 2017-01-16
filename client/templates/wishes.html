@@ -1,5 +1,6 @@
 <template name="wishes">
   <h2>My Wishlist</h2>
+  <div class="wishes">
   {{#if $.Session.get 'newWish'}}
     {{> newWish}}
   {{else}}
@@ -10,4 +11,5 @@
     {{> ownedWish}}
   <!-- {{/if}} -->
   {{/each}}
+  </div>
 </Template>
