@@ -13,25 +13,27 @@ module.exports = function () {
   });
 
   this.When(/^I click on the sign\-in button$/, function () {
-    browser.waitForExist(".login-link-text");
-    browser.click('.login-link-text');
-    // browser.saveScreenshot("./screenshot.png");
+    browser.waitForExist("#at-nav-button");
+    browser.click('#at-nav-button');
   });
 
   this.When(/^I enter my credentials$/, function () {
-    browser.waitForExist("#login-username-or-email");
-    browser.setValue("#login-username-or-email", "Tom");
-    browser.setValue("#login-password", "password");
-    browser.click(".login-button");
+    browser.waitForExist("#at-field-email");
+    browser.setValue("#at-field-email", "tom@email.com");
+    browser.setValue("#at-field-password", "password");
+    browser.click("#at-btn");
   });
 
   this.Then(/^I should be signed in$/, function () {
-    browser.waitForExist("#login-name-link");
-    expect(browser.getText("#login-name-link")).toEqual("Tom ▾")
+    browser.waitUntil(function () {
+      return browser.getText("#at-nav-button") === "Sign Out";
+    }, 5000, "waiting for sign out button");
   });
 
   this.Given(/^I am signed in$/, function () {
-    methods.signin;
+    if (browser.getText("#at-nav-button") === "Sign In"){
+      methods.signin;
+    }
   });
 
   this.When(/^I click on "([^"]*)"$/, function (arg1) {

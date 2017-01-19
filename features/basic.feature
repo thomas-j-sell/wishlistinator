@@ -5,7 +5,6 @@ Feature: Homepage
     Given I navigate to the homepage
     Then The app dispays the homepage
 
-  @watch
   Scenario: Sign-in
     Given I navigate to the homepage
     When I click on the sign-in button

@@ -7,8 +7,8 @@ Meteor.startup(() => {
     console.log("loading development data");
 
     JSON.parse(Assets.getText("users.json")).users.forEach(function (doc) {
-      Accounts.createUser({
-        "emails": doc.emails,
+      var newUser = Accounts.createUser({
+        "email": doc.email,
         "username": doc.username,
         "password": doc.password
       });

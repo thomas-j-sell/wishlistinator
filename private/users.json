@@ -2,22 +2,22 @@
   "users":
   [
     {
-      "emails": [{"address": "smoakf@palmertech.com", "verivied":  true}],
+      "email": "smoakf@palmertech.com",
       "username": "Felicity",
       "password": "ollieishot"
     },
     {
-      "emails": [{"address": "moorel@spd.gov", "verivied":  true}],
+      "email": "moorel@spd.gov",
       "username": "Olivia",
       "password": "brains"
     },
     {
-      "emails": [{"address": "groot@i.am", "verivied":  true}],
+      "email":"groot@i.am",
       "username": "Groot",
       "password": "iamgroot"
     },
     {
-      "emails": [{"address": "tom@email.com", "verivied":  true}],
+      "email": "tom@email.com",
       "username": "Tom",
       "password": "password"
     }

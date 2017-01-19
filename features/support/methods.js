@@ -1,13 +1,15 @@
 (function () {
   module.exports = {
     signin: function () {
-      browser.waitForExist("#login-sign-in-link");
-      browser.click('#login-sign-in-link');
-      browser.waitForExist('#login-username-or-email');
-      browser.setValue("#login-username-or-email", "Tom");
-      browser.setValue("#login-password", "password");
-      browser.click(".login-button");
-      browser.waitForExist("#login-name-link");
+      browser.waitForExist("#at-nav-button");
+      browser.click('#at-nav-button');
+      browser.waitForExist('#at-field-email');
+      browser.setValue("#at-field-email", "tom@email.com");
+      browser.setValue("#at-field-password", "password");
+      browser.click("#at-btn");
+      browser.waitUntil(function () {
+        return browser.getText("#at-nav-button") === "Sign Out";
+      }, 5000, "waiting for sign out button");
     }
   };
 });
