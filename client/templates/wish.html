@@ -10,7 +10,10 @@
 
 <template name="unclaimedWish">
   <div class="well">
-    <i class="fa fa-flag pull-right"></i>
+    <button type="button" class="btn btn-default pull-right" id="claim-btn">
+      <i class="fa fa-flag"></i>
+      <span>Claim</span>
+    </button>
     <h3>{{name}}</h3>
     <p>{{desc}}</p>
   </div>
@@ -19,9 +22,14 @@
 <template name="claimedWish">
   <div class="well bg-info">
     {{#if ownedByUser this.claimant}}
-    <i class="fa fa-star pull-right"></i>
+    <button type="button" class="btn btn-default pull-right" id="unclaim-btn">
+      <i class="fa fa-star"></i>
+      <span>Unclaim</span>
+    </button>
     {{else}}
-    <span class="pull-right">{{getUserName this.claimant}}</span>
+    <span class="pull-right">
+      Claimed by:
+      {{getUserName this.claimant}}</span>
     {{/if}}
     <h3>{{name}}</h3>
     <p>{{desc}}</p>

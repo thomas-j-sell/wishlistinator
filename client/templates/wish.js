@@ -5,7 +5,7 @@ Template.ownedWish.events({
 });
 
 Template.unclaimedWish.events({
-  'click .fa-flag' : function () {
+  'click #claim-btn' : function () {
     Wishes.update(this._id, {
       $set: {
         claimed: true,
@@ -16,7 +16,7 @@ Template.unclaimedWish.events({
 });
 
 Template.claimedWish.events({
-  'click .fa-star' : function () {
+  'click #unclaim-btn' : function () {
     Wishes.update(this._id, {
       $set: {
         claimed: false,
