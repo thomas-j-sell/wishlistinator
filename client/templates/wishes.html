@@ -1,11 +1,11 @@
 <template name="wishes">
   <h2>My Wishlist</h2>
-  <div class="wishes">
   {{#if $.Session.get 'newWish'}}
     {{> newWish}}
   {{else}}
-    <button class="new-wish btn btn-default">New Wish</button>
+    <button id="newWish" class="new-wish btn btn-default">New Wish</button>
   {{/if}}
+  <div class="wishes">
   {{#each wishes}}
     {{> ownedWish}}
   {{/each}}

@@ -4,6 +4,12 @@ import { Meteor } from 'meteor/meteor';
 Meteor.startup(() => {
   // load test data if it doesn't exist
   if (Meteor.users.find({}).count() === 0) {
+    Meteor.call('seedTestData');
+  }
+});
+
+Meteor.methods({
+  'seedTestData': function () {
     console.log("loading development data");
 
     JSON.parse(Assets.getText("users.json")).users.forEach(function (doc) {
@@ -31,6 +37,11 @@ Meteor.startup(() => {
       });
     });
     console.log("wishes loaded");
+  },
+  'reset': function() {
+    Meteor.users.remove({});
+    Wishes.remove({});
+    Meteor.call('seedTestData');
   }
 });
 
