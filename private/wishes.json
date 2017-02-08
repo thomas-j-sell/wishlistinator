@@ -5,8 +5,8 @@
       "name": "Industrial Grade Tablet",
       "desc": "For hacking and stuff.  Must be bulletproof.",
       "author": "Felicity",
-      "claimed": true,
-      "claimant": "Tom"
+      "claimed": false,
+      "claimant": ""
     },
     {
       "name": "PS4 Overwatch",

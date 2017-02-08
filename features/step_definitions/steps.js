@@ -10,7 +10,7 @@ module.exports = function () {
     expect(browser.getText('h1')).toEqual("Share your wishlists");
   });
 
-  this.When(/^I click on the sign\-in button$/, function () {
+  this.When(/^I click on the sign in button$/, function () {
     browser.waitForExist("#at-nav-button", 1000);
     browser.click('#at-nav-button');
   });
@@ -39,6 +39,13 @@ module.exports = function () {
       browser.waitUntil(function () {
         return browser.getText("#at-nav-button") === "Sign Out";
       }, 5000, "waiting for sign out button");
+    }
+  });
+
+  this.Given(/^I am not logged in$/, function () {
+    browser.waitForExist("#at-nav-button", 1000);
+    if (browser.getText("#at-nav-button") === "Sign Out") {
+      browser.click("#at-nav-button");
     }
   });
 
@@ -89,5 +96,28 @@ module.exports = function () {
   this.Then(/^the wish form should disappear$/, function () {
     browser.waitForExist("#insertWishForm", 1000, true);
     browser.waitForVisible("#insertWishForm", 1000, true);
+  });
+
+  this.Then(/^I should see the users list$/, function () {
+    browser.waitForExist(".users", 1000);
+    browser.waitForVisible(".users", 1000);
+    browser.waitForExist("a=Felicity", 1000);
+    browser.waitForExist("a=Olivia", 1000);
+    browser.waitForExist("a=Groot", 1000);
+  });
+
+  this.Then(/^I should see Felicity's wishlist$/, function () {
+    browser.waitForExist("h1=Felicity", 1000);
+    browser.waitForExist("h3=Industrial Grade Tablet", 1000);
+    browser.waitForExist("h3=PS4 Overwatch", 1000);
+  });
+
+  this.When(/^I click the first claim button$/, function () {
+    browser.waitForExist("#claim-btn", 1000);
+    browser.click("#claim-btn");
+  });
+
+  this.Then(/^the first wish should be claimed$/, function () {
+    browser.waitForExist("#unclaim-btn", 1000);
   });
 }

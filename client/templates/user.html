@@ -4,11 +4,13 @@
     {{username}}
   </h1>
   {{/with}}
-  {{#each wishes params.userId}}
+  <div class="wishes">
+    {{#each wishes params.userId}}
     {{#if claimed}}
       {{> claimedWish}}
     {{else}}
       {{> unclaimedWish}}
     {{/if}}
-  {{/each}}
+    {{/each}}
+  </div>
 </template>
