@@ -5,7 +5,7 @@ module.exports = function () {
   });
 
   this.Then(/^The app dispays the homepage$/, function () {
-    browser.waitForExist(".jumbotron");
+    browser.waitForExist(".jumbotron", 1000);
     expect(browser.getTitle()).toEqual("Wishlistinator");
     expect(browser.getText('h1')).toEqual("Share your wishlists");
   });

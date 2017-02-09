@@ -10,6 +10,18 @@ var hooks = function () {
     if (browser.getText("#at-nav-button") === "Sign Out") {
       browser.click("#at-nav-button");
     }
+
+    callback();
+  });
+
+  this.After(function(scenario, callback) {
+    // save a screenshot of failure state to help diagnose problems
+    if(scenario.isFailed()) {
+      var filename = 'features/failure-' +
+        scenario.getName().replace(" ", "-").toLowerCase()
+        + '.png';
+      browser.saveScreenshot(filename);
+    }
     callback();
   });
 };
