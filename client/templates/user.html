@@ -6,11 +6,13 @@
   {{/with}}
   <div class="wishes">
     {{#each wishes params.userId}}
-    {{#if claimed}}
-      {{> claimedWish}}
+      {{#if claimed}}
+        {{> claimedWish}}
+      {{else}}
+        {{> unclaimedWish}}
+      {{/if}}
     {{else}}
-      {{> unclaimedWish}}
-    {{/if}}
+      <h3>User does not currently have any wishes</h3>
     {{/each}}
   </div>
 </template>
