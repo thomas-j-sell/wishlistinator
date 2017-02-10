@@ -1,13 +1,13 @@
 Feature: My List
 
   # @TODO add a thing about show/hide new wish form
-  @watch
+  # @watch
   Scenario: My List
     Given I am signed in
     When I click on "My List"
     Then I should see my list
 
-  @watch
+  # @watch
   Scenario: Create/Delete Wish
     Given I am signed in
     When I click on "My List"

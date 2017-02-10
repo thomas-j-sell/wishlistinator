@@ -1,3 +1,6 @@
 <template name="footer">
     <span>footer stuff goes here</span>
+    {{#if currentUser}}
+    | <a href="/changePwd">Change Password</a>
+    {{/if}}
 </template>

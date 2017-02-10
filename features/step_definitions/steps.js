@@ -22,6 +22,28 @@ module.exports = function () {
     browser.click("#at-btn");
   });
 
+  this.When(/^I enter my credentials with an incorrect password$/, function () {
+    browser.waitForExist("#at-field-email", 1000);
+    browser.setValue("#at-field-email", "tom@email.com");
+    browser.setValue("#at-field-password", "notcorrect");
+    browser.click("#at-btn");
+  });
+
+  this.Then(/^I should see an incorrect password error$/, function () {
+    browser.waitForExist(".at-error=Incorrect password", 1000);
+  });
+
+  this.When(/^I enter my credentials with an incorrect email$/, function () {
+    browser.waitForExist("#at-field-email", 1000);
+    browser.setValue("#at-field-email", "bogus@email.com");
+    browser.setValue("#at-field-password", "password");
+    browser.click("#at-btn");
+  });
+
+  this.Then(/^I should see an incorrect email error$/, function () {
+    browser.waitForExist(".at-error=User not found", 1000);
+  });
+
   this.Then(/^I should be signed in$/, function () {
     browser.waitUntil(function () {
       return browser.getText("#at-nav-button") === "Sign Out";
@@ -119,5 +141,42 @@ module.exports = function () {
 
   this.Then(/^the first wish should be claimed$/, function () {
     browser.waitForExist("#unclaim-btn", 1000);
+  });
+
+  this.Then(/^I should see the change password form$/, function () {
+    browser.waitForExist(".at-form", 1000);
+    browser.waitForVisible(".at-form", 1000);
+  });
+
+  this.When(/^I enter new credentials$/, function () {
+    browser.setValue("#at-field-current_password", "password");
+    browser.setValue("#at-field-password", "blurg7");
+    browser.setValue("#at-field-password_again", "blurg7");
+  });
+
+  this.When(/^I click the update your password button$/, function () {
+    browser.click(".submit");
+  });
+
+  this.When(/^I sign out$/, function () {
+    browser.waitForExist("#at-nav-button", 1000);
+    if (browser.getText("#at-nav-button") === "Sign Out") {
+      browser.click("#at-nav-button");
+    }
+    browser.waitForExist("#at-nav-button=Sign In", 1000);
+  });
+
+  this.Then(/^I should be able to log in with the new password$/, function () {
+    if (browser.getText("#at-nav-button") === "Sign In"){
+      browser.waitForExist("#at-nav-button", 1000);
+      browser.click('#at-nav-button');
+      browser.waitForExist('#at-field-email', 10000);
+      browser.setValue("#at-field-email", "tom@email.com");
+      browser.setValue("#at-field-password", "blurg7");
+      browser.click("#at-btn");
+      browser.waitUntil(function () {
+        return browser.getText("#at-nav-button") === "Sign Out";
+      }, 5000, "waiting for sign out button");
+    }
   });
 }

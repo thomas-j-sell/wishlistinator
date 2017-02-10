@@ -1,12 +1,12 @@
 Feature: Users pages
 
-  @watch
+  # @watch
   Scenario: Users Page
     Given I am signed in
     When I click on "Users"
     Then I should see the users list
 
-  @watch
+  # @watch
   Scenario: User's Page
     Given I am signed in
     When I click on "Users"
@@ -14,7 +14,7 @@ Feature: Users pages
     When I click on "Felicity"
     Then I should see Felicity's wishlist
 
-  @watch
+  # @watch
   Scenario: Claim/Unclaim
     Given I am signed in
     When I click on "Users"
