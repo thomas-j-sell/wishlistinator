@@ -3,8 +3,12 @@ import { Meteor } from 'meteor/meteor';
 // code to run on server at startup
 Meteor.startup(() => {
   // load test data if it doesn't exist
-  if (Meteor.users.find({}).count() === 0) {
+  if (process.env.NODE_ENV === 'development' && Meteor.users.find({}).count() === 0) {
     Meteor.call('seedTestData');
+  }
+  // @TODO remove or change to 'beta' before releasing
+  if (process.env.NODE_ENV === 'production') {
+    Meteor.call("loadBetaUsers");
   }
 });
 
@@ -42,6 +46,21 @@ Meteor.methods({
     Meteor.users.remove({});
     Wishes.remove({});
     Meteor.call('seedTestData');
+  },
+  'loadBetaUsers': function() {
+    console.log("Creating new beta users");
+    JSON.parse(Assets.getText("beta_users.json")).users.forEach( function (doc) {
+      // only create user if it doesn't already exist
+      console.log("processing: " + doc.username);
+      if (!Meteor.users.findOne({"username": doc.username})) {
+        console.log("creating: " + doc.username);
+        Accounts.createUser({
+          "email": doc.email,
+          "username": doc.username,
+          "password": doc.password
+        });
+      }
+    });
   }
 });
 
