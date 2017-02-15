@@ -3,3 +3,4 @@ node_modules/
 settings.json
 beta_users.json
 *.png
+npm-debug.log
