@@ -17,8 +17,8 @@ var hooks = function () {
   this.After(function(scenario, callback) {
     // save a screenshot of failure state to help diagnose problems
     if(scenario.isFailed()) {
-      var filename = 'features/failure-' +
-        scenario.getName().replace(" ", "-").toLowerCase()
+      var filename = 'features/failure-'
+        + scenario.getName().replace(" ", "-").replace("/", "-").toLowerCase()
         + '.png';
       browser.saveScreenshot(filename);
     }
