@@ -120,6 +120,16 @@ module.exports = function () {
     browser.waitForVisible("#insertWishForm", 1000, true);
   });
 
+  this.When(/^I ensure all wishes are deleted$/, function () {
+    while (browser.isExisting(".fa-trash")) {
+      browser.click(".fa-trash");
+    }
+  });
+
+  this.Then(/^I should see instructional message$/, function () {
+    browser.waitForExist("h3=Click the New Wish button and fill out the form to add wishes");
+  });
+
   this.Then(/^I should see the users list$/, function () {
     browser.waitForExist(".users", 1000);
     browser.waitForVisible(".users", 1000);

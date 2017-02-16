@@ -21,4 +21,10 @@ Feature: My List
     When I click the x
     Then the wish form should disappear
 
-
+  # @watch
+  Scenario: Empty list
+    Given I am signed in
+    When I click on "My List"
+    Then I should see my list
+    When I ensure all wishes are deleted
+    Then I should see instructional message
