@@ -8,6 +8,9 @@ module.exports = function () {
     browser.waitForExist(".jumbotron", 1000);
     expect(browser.getTitle()).toEqual("Wishlistinator");
     expect(browser.getText('h1')).toEqual("Share your wishlists");
+    expect(browser.isExisting(".navbar-collapse"));
+    expect(browser.isExisting(".footer"));
+    expect(browser.isExisting(".at-nav-button=Sign In"))
   });
 
   this.When(/^I click on the sign in button$/, function () {
