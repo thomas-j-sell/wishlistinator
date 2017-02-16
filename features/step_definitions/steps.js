@@ -143,6 +143,15 @@ module.exports = function () {
     browser.waitForExist("#unclaim-btn", 1000);
   });
 
+  this.When(/^I click the first unclaim button$/, function () {
+    browser.waitForExist("#unclaim-btn", 1000);
+    browser.click("#unclaim-btn");
+  });
+
+  this.Then(/^the first wish should be unclaimed$/, function () {
+    browser.waitForExist("#claim-btn", 1000);
+  });
+
   this.Then(/^I should see the change password form$/, function () {
     browser.waitForExist(".at-form", 1000);
     browser.waitForVisible(".at-form", 1000);

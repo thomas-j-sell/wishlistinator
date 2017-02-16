@@ -23,5 +23,7 @@ Feature: Users pages
     Then I should see Felicity's wishlist
     When I click the first claim button
     Then the first wish should be claimed
+    When I click the first unclaim button
+    Then the first wish should be unclaimed
 
 

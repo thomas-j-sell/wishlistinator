@@ -48,4 +48,14 @@ Meteor.methods({
   }
 });
 
+// @TODO remove allow not secure enough
+Wishes.allow({
+  insert: function () {
+    return true;
+  },
+  update: function () {
+    return true;
+  }
+});
+
 Wishes.attachSchema( WishSchema );
